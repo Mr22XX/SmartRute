@@ -157,6 +157,17 @@ SmartRute Bengkulu terus dikembangkan agar lebih bermanfaat dan efisien dalam me
 
 ---
 
+## Pengujian Aplikasi
+- Pengujian ini dilakukan dari beberapa lokasi yang ada di Kota Bengkulu dengan titik awal yaitu Universitas Bengkulu:
+  ![image](https://github.com/user-attachments/assets/e78c743c-2415-4838-8e9a-3a2ef53d9b25)
+  ![image](https://github.com/user-attachments/assets/e569e50a-37a2-4454-8da5-74e5fda691ba)
+  ![image](https://github.com/user-attachments/assets/b6fcfd32-b96e-43b4-8c2a-26bedc01462a)
+
+
+
+
+---
+
 ## 📦 Prasyarat Sistem
 
 Pastikan sistem kamu sudah terinstal:
