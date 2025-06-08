@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tentang - SmartRute Bengkulu</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    :root {
+      --primary: #00695c;
+      --primary-light: #26a69a;
+      --secondary: #ffab00;
+      --background: #e0f2f1;
+      --text-dark: #004d40;
+      --text-light: #ffffff;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', 'Segoe UI', Tahoma, sans-serif;
+      background-color: var(--background);
+      color: var(--text-dark);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+       header {
+  background-color: var(--primary);
+  padding: 20px 0;
+  color: var(--text-light);
+  font-weight: 700;
+  font-size: 1.8rem;
+  letter-spacing: 1.5px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  border-bottom: 5px solid var(--secondary);
+}
+
+header .container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.5rem;
+}
+
+header .logo i {
+  color: var(--secondary);
+}
+
+.nav-menu {
+  display: flex;
+  gap: 20px;
+  font-size: 1rem;
+}
+
+.nav-menu a {
+  color: var(--text-light);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-weight: 500;
+}
+
+.nav-menu a:hover {
+  color: var(--secondary);
+}
+
+/* Responsif untuk mobile */
+@media (max-width: 640px) {
+  .nav-menu {
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  header .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+    main {
+      flex: 1;
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 30px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: var(--primary);
+      font-size: 1.6rem;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background-color: var(--primary);
+      color: var(--text-light);
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+    }
+
+    a {
+      color: var(--secondary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .back-link {
+      margin-top: 20px;
+      display: inline-block;
+      color: var(--primary);
+      font-weight: bold;
+    }
+
+    .back-link i {
+      margin-right: 6px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+  <div class="container">
+    <div class="logo">
+      <i class="fas fa-map-signs"></i>
+      <span>SmartRute Bengkulu</span>
+    </div>
+    <nav class="nav-menu">
+      <a href="index.html">Beranda</a>
+      <a href="about.html">Tentang</a>
+    </nav>
+  </div>
+</header>
+
+  <main>
+    <div class="card">
+      <h2><i class="fas fa-info-circle"></i> Apa Itu SmartRute Bengkulu?</h2>
+      <p>
+        <strong>SmartRute Bengkulu</strong> adalah aplikasi berbasis web yang dirancang untuk membantu masyarakat Kota Bengkulu dalam menentukan rute tercepat dan terhindar dari kemacetan lalu lintas. Aplikasi ini menggunakan data lalu lintas dan kecerdasan buatan dengan model Random Forest Classifier untuk memberikan prediksi kemacetan dan navigasi yang efisien.
+      </p>
+
+      <h2><i class="fas fa-users"></i> Tim Pengembang</h2>
+      <ul>
+        <li><strong>Nama:</strong> <br> 1. Rayhan Muhammad Adha (G1A023051) <br>
+                                        2. Aulia Dwi Rahmadani (G1A023043) <br>
+                                        3. Nadya Alicia Putri (G1A023019)
+        </li>
+        <li><strong>Program Studi:</strong>  Teknik Informatika - Universitas Bengkulu</li>
+        <li><strong>Dosen:</strong>  Ir. Arie Vatresia, S.T., M.T.I., Ph.D</li>
+        <li><strong>Teknologi:</strong> Python (FastAPI), JavaScript, Leaflet, RF Model, HTML/CSS</li>
+      </ul>
+
+      <h2><i class="fas fa-bullseye"></i> Tujuan Proyek</h2>
+      <p>
+        Proyek ini dibuat sebagai bagian dari pengembangan sistem Smart City yang mampu mendukung kenyamanan mobilitas warga kota. Dengan memanfaatkan AI, pengguna dapat memperoleh rute optimal berdasarkan kondisi lalu lintas terkini.
+      </p>
+
+      <div>
+          <h2>Link Github</h2>
+          <a href="" style="color: black;">Click Here</a>
+      </div>
+
+      <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Kembali ke Beranda</a>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Smart Rute Bengkulu - Dibuat untuk Kota Pintar yang Lebih Baik.
+  </footer>
+</body>
+</html>

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SmartRute Bengkulu</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    :root {
+      --primary: #00695c; /* dark teal */
+      --primary-light: #26a69a;
+      --secondary: #ffab00; /* amber */
+      --background: #e0f2f1;
+      --text-dark: #004d40;
+      --text-light: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--background);
+      color: var(--text-dark);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+  background-color: var(--primary);
+  padding: 20px 0;
+  color: var(--text-light);
+  font-weight: 700;
+  font-size: 1.8rem;
+  letter-spacing: 1.5px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  border-bottom: 5px solid var(--secondary);
+}
+
+header .container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.5rem;
+}
+
+header .logo i {
+  color: var(--secondary);
+}
+
+.nav-menu {
+  display: flex;
+  gap: 20px;
+  font-size: 1rem;
+}
+
+.nav-menu a {
+  color: var(--text-light);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-weight: 500;
+}
+
+.nav-menu a:hover {
+  color: var(--secondary);
+}
+
+/* Responsif untuk mobile */
+@media (max-width: 640px) {
+  .nav-menu {
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  header .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+
+    main {
+      flex: 1;
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 20px;
+      width: 100%;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 30px 25px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.15);
+    }
+
+    form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+
+    .input-group {
+      position: relative;
+      width: 100%;
+    }
+
+    .input-group i {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  color: var(--primary-light);
+  font-size: 1rem;
+  pointer-events: none;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 12px 15px 12px 40px;
+  border: 1.5px solid var(--primary-light);
+  border-radius: 999px; /* full rounded input */
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  outline: none;
+  background-color: #fff;
+  color: var(--text-dark);
+}
+
+input[type="text"]::placeholder {
+  color: #999;
+  opacity: 1;
+  font-style: italic;
+}
+
+input[type="text"]:focus {
+  border-color: var(--secondary);
+  box-shadow: 0 0 10px rgba(255, 171, 0, 0.4);
+}
+
+
+    button {
+      background-color: var(--secondary);
+      border: none;
+      border-radius: 10px;
+      color: var(--text-dark);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 14px 25px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 5px 15px rgba(255, 171, 0, 0.5);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    button i {
+      font-size: 1.2rem;
+    }
+
+    button:hover:not(:disabled) {
+      background-color: #ffc400;
+      box-shadow: 0 8px 22px rgba(255, 171, 0, 0.8);
+    }
+
+    button:disabled {
+      background-color: #bbb;
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+
+    #status {
+      margin: 20px 0 10px;
+      font-size: 1rem;
+      color: var(--primary);
+      text-align: center;
+      min-height: 1.5em;
+      user-select: none;
+    }
+
+    .map-container {
+      margin-top: 30px;
+      height: 75vh;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+      border: 2px solid var(--primary-light);
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    footer {
+      background-color: var(--primary);
+      color: var(--text-light);
+      text-align: center;
+      padding: 25px 15px;
+      font-size: 0.9rem;
+      letter-spacing: 0.8px;
+      user-select: none;
+    }
+
+    @media (max-width: 640px) {
+      form {
+        grid-template-columns: 1fr;
+      }
+
+      button {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .map-container {
+        height: 60vh;
+      }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="logo">
+      <i class="fas fa-map-signs"></i>
+      <span>SmartRute Bengkulu</span>
+    </div>
+    <nav class="nav-menu">
+      <a href="index.html">Beranda</a>
+      <a href="about.html">Tentang</a>
+    </nav>
+  </div>
+</header>
+
+
+  <main>
+    <section class="card" aria-label="Form pencarian rute">
+      <form id="navForm" autocomplete="off" novalidate>
+        <div class="input-group">
+          <i class="fas fa-location-arrow"></i>
+          <input type="text" id="start" placeholder="Masukkan lokasi awal" required aria-label="Lokasi awal" />
+        </div>
+        <div class="input-group">
+          <i class="fas fa-map-pin"></i>
+          <input type="text" id="end" placeholder="Masukkan lokasi tujuan" required aria-label="Lokasi tujuan" />
+        </div>
+        <button type="submit" id="searchBtn" aria-label="Cari rute">
+          <i class="fas fa-route"></i> Cari Rute
+        </button>
+      </form>
+      <div id="status" role="status" aria-live="polite"></div>
+    </section>
+
+    <section class="map-container" aria-label="Peta navigasi">
+      <iframe id="mapFrame" src="navigation_map.html"></iframe>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Smart Rute Bengkulu - All rights reserved.
+  </footer>
+
+  <script>
+    const form = document.getElementById("navForm");
+    const startInput = document.getElementById("start");
+    const endInput = document.getElementById("end");
+    const statusDiv = document.getElementById("status");
+    const mapFrame = document.getElementById("mapFrame");
+    const searchBtn = document.getElementById("searchBtn");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const start = startInput.value.trim();
+      const end = endInput.value.trim();
+
+      if (!start || !end) {
+        showAlert("Mohon isi kedua lokasi dengan benar.", "error");
+        return;
+      }
+
+      statusDiv.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sedang Mencari...';
+      searchBtn.disabled = true;
+
+      try {
+        const response = await fetch("http://localhost:8001/generate-route", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ start_place: start, end_place: end }),
+        });
+
+        const result = await response.text();
+
+        if (response.ok) {
+          mapFrame.src = "navigation_map.html?ts=" + Date.now();
+          statusDiv.innerHTML = '<i class="fas fa-check-circle"></i> Rute berhasil dimuat.';
+          addToSearchHistory(start, end);
+        } else {
+          showAlert(result.replace(/<[^>]*>/g, ""), "error");
+          statusDiv.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Gagal memuat rute.';
+        }
+      } catch (err) {
+        showAlert("Terjadi kesalahan koneksi ke server.", "error");
+        console.error(err);
+        statusDiv.innerHTML = '<i class="fas fa-times-circle"></i> Gagal memproses rute.';
+      } finally {
+        searchBtn.disabled = false;
+      }
+    });
+
+    function showAlert(message, type) {
+      const alertDiv = document.createElement("div");
+      alertDiv.style.position = "fixed";
+      alertDiv.style.top = "20px";
+      alertDiv.style.right = "20px";
+      alertDiv.style.padding = "15px 20px";
+      alertDiv.style.backgroundColor = type === "error" ? "#d32f2f" : "#388e3c";
+      alertDiv.style.color = "white";
+      alertDiv.style.borderRadius = "6px";
+      alertDiv.style.boxShadow = "0 4px 10px rgba(0,0,0,0.15)";
+      alertDiv.style.zIndex = "1000";
+      alertDiv.style.fontWeight = "600";
+      alertDiv.textContent = message;
+
+      document.body.appendChild(alertDiv);
+
+      setTimeout(() => {
+        alertDiv.style.transition = "opacity 0.6s ease";
+        alertDiv.style.opacity = "0";
+        setTimeout(() => document.body.removeChild(alertDiv), 600);
+      }, 4000);
+    }
+
+    function addToSearchHistory(start, end) {
+      let history = JSON.parse(localStorage.getItem("searchHistory") || "[]");
+      history.unshift({ start, end, date: new Date().toISOString() });
+      if (history.length > 10) history.pop();
+      localStorage.setItem("searchHistory", JSON.stringify(history));
+    }
+  </script>
+</body>
+</html>
