@@ -1,8 +1,10 @@
 # SmartRute Bengkulu 🚦📍
+-
 SmartRute Bengkulu adalah aplikasi berbasis web yang dirancang untuk membantu masyarakat Kota Bengkulu dalam menentukan rute tercepat dan terhindar dari kemacetan lalu lintas. Aplikasi ini menggunakan data lalu lintas dan kecerdasan buatan dengan model Random Forest Classifier untuk memberikan prediksi kemacetan dan navigasi yang efisien.
 ---
 
 ## 🎯 1. Tujuan Proyek
+-
 Proyek ini dibuat sebagai bagian dari pengembangan sistem Smart City untuk mendukung kenyamanan mobilitas warga Kota Bengkulu. Dengan memanfaatkan teknologi AI, pengguna dapat memperoleh rute optimal berdasarkan kondisi lalu lintas terkini, sehingga dapat menghemat waktu dan menghindari titik-titik rawan macet.
 ---
 
