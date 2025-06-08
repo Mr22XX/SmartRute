@@ -155,6 +155,51 @@ SmartRute Bengkulu terus dikembangkan agar lebih bermanfaat dan efisien dalam me
 
 ---
 
+## 📦 Prasyarat Sistem
+
+Pastikan sistem kamu sudah terinstal:
+
+- Python 3.9 atau lebih baru
+- pip (Python package manager)
+- Git (jika cloning dari repo)
+
+---
+
+## 🧰 Instalasi Proyek
+
+### 🔽 Langkah 1: Clone Repository (jika dari GitHub)
+
+```bash
+git clone https://github.com/username/smartcity-bengkulu.git
+cd smartcity-bengkulu
+
+```
+### 📦 Langkah 2: Buat Virtual Environment (opsional tapi disarankan)
+```
+python -m venv venv
+source venv/bin/activate        # Linux/macOS
+venv\Scripts\activate           # Windows
+```
+
+### 📥 Install Dependencies
+```
+pip install -r requirements.txt
+```
+
+## 🚀 Menjalankan Aplikasi
+
+### 💻 Langkah 1: Jalankan Backend FastAPI
+```
+uvicorn main:app --reload --host 0.0.0.0 --port 8001
+```
+
+### Langkah 2: Buka Halaman Web
+- Buka file index.html langsung di browser.
+
+- Masukkan lokasi awal dan tujuan (contoh: "Lingkar Barat", "Universitas Bengkulu").
+
+- Klik Cari Rute, maka backend akan memproses dan hasilnya ditampilkan di navigation_map.html.
+
 ## 👨‍💻 Tim Pengembang
 
 | Nama                      | NPM        |
